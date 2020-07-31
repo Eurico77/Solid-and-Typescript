@@ -18,8 +18,14 @@ export class MailTrapMailProvider implements IMailProvider {
     await this.transporter.sendMail({
       to: {
         name: message.to.name,
-        address: message.to.email 
-      }
+        address: message.to.email
+      },
+      from: {
+        name: message.from.name,
+        address: message.from.email
+      },
+      subject: message.subject,
+      html: message.body
     })
   }
 
