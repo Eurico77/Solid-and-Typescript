@@ -1,9 +1,9 @@
-export interface IAdress {
+interface IAdress {
   email: string;
   name: string;
 }
 
-export interface Message {
+export interface IMessage {
   to: IAdress;
   from: IAdress;
   subject: string;
@@ -11,5 +11,5 @@ export interface Message {
 }
 
 export interface IMailProvider {
-  sendEmail(message: Message): Promise<void>;
+  sendEmail(message: IMessage): Promise<void>;
 }
