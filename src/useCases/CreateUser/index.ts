@@ -6,14 +6,14 @@ import { CreateUserController } from "./CreateUserController";
 const mailTrapMailProvider = new MailTrapMailProvider();
 const postgresUsersRepository = new PostgresUserRepository();
 
-const createUserUserCase = new CreateUserUseCase(
+const createUserUseCase = new CreateUserUseCase(
   postgresUsersRepository,
   mailTrapMailProvider,
 
 );
 
 const createUserController = new CreateUserController(
-  createUserUserCase
+  createUserUseCase
 );
 
-export {CreateUserController, CreateUserUseCase}
+export {createUserController, createUserUseCase}
